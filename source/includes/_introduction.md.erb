@@ -1,0 +1,28 @@
+# Introducción
+> Aquí podrá encontrar ejemplos de las diferente peticiones y repuestas soportadas por la API
+
+Bienvenido a la documentación online de las especificaciones de la API <b>Stockist-Phoenix</b>.
+
+Stockist Phoenix es un api de publicación PUSH de precios e inventario y notificación de reservas. 
+Para ello el cliente deberá tratar los mensajes explicados en este documento, para realizar la carga de precios e inventario correctamente en su sistema. 
+Todos los mensajes (excepto la notificación de reservas) siguen este esquema de flujo: 
+
+<%= image_tag "images/flujo.png" %>
+
+Para la notificación de reservas será el cliente quien realice una petición (request) al webservice de StockistPhoenix para notificar una creación, modificación o cancelación de una reserva que se haya producido en su sistema. 
+
+<%= image_tag "images/flujo_reserva.png" %>
+
+La comunicación de todos los mensajes se realizan mediante HTTP RAW, es decir, el envío es mediante un POST sobre HTTP pero con un body en formato texto XML.
+
+Puede descargar las xsd de los mensajes descritos en este documento en este enlace: 
+
+[Link xsd](https://drive.google.com/file/d/1U0Hzah4nsAfr24LMa615FP73ZS6kYVwg/view?usp=share_link)
+
+Para la generación de las xsd revise el archivo PhoenixSchema.xsd que es la raíz de todo el esquema. Se ha usado jaxb para la generación de los objetos en java. 
+
+
+<aside class="success">
+<b>NOTA</b>: Gestionar el hotel a través del API Stockist-Phoenix no impide que se pueda seguir
+gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento son compatibles, prevaleciendo siempre la última actualización realizada
+</aside>
