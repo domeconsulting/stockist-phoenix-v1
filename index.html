@@ -5,11 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta
-            name="description"
-            content="Documentation for the Kittn API"
-        >
-    <title>API Reference</title>
+    <title>Stockist Phoenix API</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -286,16 +282,13 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-b12a2749.js"></script>
+    <link href="stylesheets/screen-87e2a712.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-ab3bc281.js"></script>
 
-    <script>
-      $(function() { setupCodeCopy(); });
-    </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;xml&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -303,12 +296,9 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <img src="images/logo-980bcc6d.png" class="logo" alt="" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="xml">xml</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -316,282 +306,1508 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#introduccion" class="toc-h1 toc-link" data-title="Introducción">Introducción</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#control-de-versiones" class="toc-h1 toc-link" data-title="Control de versiones">Control de versiones</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#protocolo-de-conexion" class="toc-h1 toc-link" data-title="Protocolo de conexión">Protocolo de conexión</a>
+          </li>
+          <li>
+            <a href="#especificaciones-del-api" class="toc-h1 toc-link" data-title="Especificaciones del API">Especificaciones del API</a>
+          </li>
+          <li>
+            <a href="#phoenixhotelconfiguration" class="toc-h1 toc-link" data-title="PhoenixHotelConfiguration">PhoenixHotelConfiguration</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#phoenixhotelconfigurationrequest" class="toc-h2 toc-link" data-title="PhoenixHotelConfigurationRequest">
+					PhoenixHotelConfigurationRequest</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#phoenixroomrateupdate" class="toc-h1 toc-link" data-title="PhoenixRoomRateUpdate">PhoenixRoomRateUpdate</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#phoenixroomrateupdaterequest" class="toc-h2 toc-link" data-title="PhoenixRoomRateUpdateRequest">
+					PhoenixRoomRateUpdateRequest</a>
+                  </li>
+                  <li>
+                    <a href="#phoenixroomrateupdateresponse" class="toc-h2 toc-link" data-title="PhoenixRoomRateUpdateResponse">
+					PhoenixRoomRateUpdateResponse</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#phoenixbookingnotification" class="toc-h1 toc-link" data-title="PhoenixBookingNotification">PhoenixBookingNotification</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#phoenixbookingnotificationrequest" class="toc-h2 toc-link" data-title="PhoenixBookingNotificationRequest">
+					PhoenixBookingNotificationRequest</a>
+                  </li>
+                  <li>
+                    <a href="#phoenixbookingnotificationresponse" class="toc-h2 toc-link" data-title="PhoenixBookingNotificationResponse">
+					PhoenixBookingNotificationResponse</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#tipos-complejos" class="toc-h1 toc-link" data-title="Tipos Complejos">Tipos Complejos</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#credentials" class="toc-h2 toc-link" data-title="Credentials">
+					Credentials</a>
+                  </li>
+                  <li>
+                    <a href="#hotelconfig" class="toc-h2 toc-link" data-title="HotelConfig">
+					HotelConfig</a>
+                  </li>
+                  <li>
+                    <a href="#roomconfig" class="toc-h2 toc-link" data-title="RoomConfig">
+					RoomConfig</a>
+                  </li>
+                  <li>
+                    <a href="#occupationconfig" class="toc-h2 toc-link" data-title="OccupationConfig">
+					OccupationConfig</a>
+                  </li>
+                  <li>
+                    <a href="#rateconfig" class="toc-h2 toc-link" data-title="RateConfig">
+					RateConfig</a>
+                  </li>
+                  <li>
+                    <a href="#mealplanconfig" class="toc-h2 toc-link" data-title="MealPlanConfig">
+					MealPlanConfig</a>
+                  </li>
+                  <li>
+                    <a href="#property" class="toc-h2 toc-link" data-title="Property">
+					Property</a>
+                  </li>
+                  <li>
+                    <a href="#error" class="toc-h2 toc-link" data-title="Error">
+					Error</a>
+                  </li>
+                  <li>
+                    <a href="#rate" class="toc-h2 toc-link" data-title="Rate">
+					Rate</a>
+                  </li>
+                  <li>
+                    <a href="#room" class="toc-h2 toc-link" data-title="Room">
+					Room</a>
+                  </li>
+                  <li>
+                    <a href="#applicabledates" class="toc-h2 toc-link" data-title="ApplicableDates">
+					ApplicableDates</a>
+                  </li>
+                  <li>
+                    <a href="#mealplan" class="toc-h2 toc-link" data-title="MealPlan">
+					MealPlan</a>
+                  </li>
+                  <li>
+                    <a href="#occupation" class="toc-h2 toc-link" data-title="Occupation">
+					Occupation</a>
+                  </li>
+                  <li>
+                    <a href="#booking" class="toc-h2 toc-link" data-title="Booking">
+					Booking</a>
+                  </li>
+                  <li>
+                    <a href="#contactperson" class="toc-h2 toc-link" data-title="ContactPerson">
+					ContactPerson</a>
+                  </li>
+                  <li>
+                    <a href="#bookingroom" class="toc-h2 toc-link" data-title="BookingRoom">
+					BookingRoom</a>
+                  </li>
+                  <li>
+                    <a href="#rateday" class="toc-h2 toc-link" data-title="RateDay">
+					RateDay</a>
+                  </li>
+                  <li>
+                    <a href="#guest" class="toc-h2 toc-link" data-title="Guest">
+					Guest</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#ejemplos" class="toc-h1 toc-link" data-title="Ejemplos">Ejemplos</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#phoenixhotelconfigurationresponse" class="toc-h2 toc-link" data-title="PhoenixHotelConfigurationResponse">
+					PhoenixHotelConfigurationResponse</a>
+                  </li>
+                  <li>
+                    <a href="#phoenixroomrateupdaterequest" class="toc-h2 toc-link" data-title="PhoenixRoomRateUpdateRequest">
+					PhoenixRoomRateUpdateRequest</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#faq-39-s" class="toc-h1 toc-link" data-title="FAQ's">FAQ's</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#listado-de-codigos-de-propiedades-de-tarifa" class="toc-h2 toc-link" data-title="Listado de códigos de propiedades de tarifa">
+					Listado de códigos de propiedades de tarifa</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='mailto:soporte@hotetec.com'>soporte@hotetec.com</a></li>
+            <li><a href='https://hotel.hotetec.com'>Acceso Extranet</a></li>
+            <li><a href='http://www.hotetec.com'>www.hotetec.com</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+        <h1 id='introduccion'>Introducción</h1>
 <blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Aquí podrá encontrar ejemplos de las diferente peticiones y repuestas soportadas por la API</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>Bienvenido a la documentación online de las especificaciones de la API <b>Stockist-Phoenix</b>.</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>Stockist Phoenix es un api de publicación PUSH de precios e inventario y notificación de reservas. 
+Para ello el cliente deberá tratar los mensajes explicados en este documento, para realizar la carga de precios e inventario correctamente en su sistema. 
+Todos los mensajes (excepto la notificación de reservas) siguen este esquema de flujo: </p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p><img src="images/flujo-3c53dc74.png" alt="" /></p>
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Para la notificación de reservas será el cliente quien realice una petición (request) al webservice de StockistPhoenix para notificar una creación, modificación o cancelación de una reserva que se haya producido en su sistema. </p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p><img src="images/flujo_reserva-2e201d02.png" alt="" /></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<p>La comunicación de todos los mensajes se realizan mediante HTTP RAW, es decir, el envío es mediante un POST sobre HTTP pero con un body en formato texto XML.</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<p>Puede descargar las xsd de los mensajes descritos en este documento en este enlace: </p>
+
+<p><a href="https://drive.google.com/file/d/1U0Hzah4nsAfr24LMa615FP73ZS6kYVwg/view?usp=share_link">Link xsd</a></p>
+
+<p>Para la generación de las xsd revise el archivo PhoenixSchema.xsd que es la raíz de todo el esquema. Se ha usado jaxb para la generación de los objetos en java. </p>
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<b>NOTA</b>: Gestionar el hotel a través del API Stockist-Phoenix no impide que se pueda seguir
+gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento son compatibles, prevaleciendo siempre la última actualización realizada
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='control-de-versiones'>Control de versiones</h1>
+<aside class="notice">Versión actual <b>1.0.0</b></aside>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Fecha</th>
+<th>Autor</th>
+<th>Versión</th>
+<th>Cambios realizados</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>29/03/2023</td>
+<td>Isaac Fullana</td>
+<td>1.0.0</td>
+<td>Especificaciones de la API Stockist Phoenix</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
+<ul>
+<li>Mensajería XML sobre HTTP. Los mensajes siempre deberá ir por <b>HTTP RAW POST</b> (POST sin paso de parámetros).</li>
+<li>La codificación de los mensajes es <b>UTF-8</b>.</li>
+<li>Todos los mensajes soportan compresión <b>gzip</b>. Si el cliente desea recibir las respuestas XML comprimidas, tiene que especificarlo en las cabeceras HTTP de su petición</li>
+</ul>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p><code>Accept-encoding: gzip</code></p>
+<h1 id='especificaciones-del-api'>Especificaciones del API</h1>
+<p>A continuación se detallan los distintos mensajes que tiene el API StockistPhoenix. Consta de los siguientes mensajes: </p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<ul>
+<li><p>PhoenixHotelConfigurationRequest/ PhoenixHotelConfigurationResponse<br/>
+Mensaje dedicado a recuperar las habitaciones y tarifas de un hotel del cliente. </p></li>
+<li><p>PhoenixBroadcastRateRequest / PhoenixBroadcastRateResponse<br/>
+Mensaje dedicado a la publicación de precio e inventario </p></li>
+<li><p>PhoenixBookingNotificationRequest/ PhoenixBookingNotificationResponse<br/>
+Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Request y Hotetec realizará la Response. </p></li>
+</ul>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<p>Es importante destacar que en cualquiera de las respuestas de estos mensajes podría indicarse que se ha producido un error al tratar la request. Los errores siempre se informarán siempre siguiendo el elemento Error (4.4.8 Error). En el anexo final podrá observar algunos ejemplos. </p>
+<h1 id='phoenixhotelconfiguration'>PhoenixHotelConfiguration</h1>
+<blockquote>
+<p>Ejemplo PhoenixHotelConfigurationRequest</p>
+</blockquote>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;PhoenixHotelConfigurationRequest&gt;</span>
+    <span class="nt">&lt;credentials&gt;</span>
+        <span class="nt">&lt;system&gt;</span>TEST<span class="nt">&lt;/system&gt;</span>
+        <span class="nt">&lt;vendorCode&gt;</span>VENDORTEST<span class="nt">&lt;/vendorCode&gt;</span>
+        <span class="nt">&lt;user&gt;</span>TESTUSER<span class="nt">&lt;/user&gt;</span>
+        <span class="nt">&lt;password&gt;</span>TESTPASSWORD<span class="nt">&lt;/password&gt;</span>
+    <span class="nt">&lt;/credentials&gt;</span>
+    <span class="nt">&lt;hotelCode&gt;</span>1234<span class="nt">&lt;/hotelCode&gt;</span>
+<span class="nt">&lt;/PhoenixHotelConfigurationRequest&gt;</span>
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Ejemplo PhoenixHotelConfigurationResponse</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;PhoenixHotelConfigurationResponse&gt;</span>
+    <span class="nt">&lt;hotelConfig</span> <span class="na">code=</span><span class="s">"1234"</span> <span class="na">name=</span><span class="s">"Hotel Test"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;roomConfig</span> <span class="na">code=</span><span class="s">"DBLSTD"</span> <span class="na">name=</span><span class="s">"Doble Estándar"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"2"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;rateConfig</span> <span class="na">code=</span><span class="s">"NRF"</span> <span class="na">name=</span><span class="s">"Tarifa Non Refundable"</span><span class="nt">&gt;</span>                
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"HB"</span> <span class="na">name=</span><span class="s">"Half Board"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"RO"</span> <span class="na">name=</span><span class="s">"Room Only"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">code=</span><span class="s">"NRE"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/rateConfig&gt;</span>
+            <span class="nt">&lt;rateConfig</span> <span class="na">code=</span><span class="s">"ONLINE"</span> <span class="na">name=</span><span class="s">"Tarifa Online"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"HB"</span> <span class="na">name=</span><span class="s">"Half Board"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"RO"</span> <span class="na">name=</span><span class="s">"Room Only"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">code=</span><span class="s">"ON"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/rateConfig&gt;</span>
+        <span class="nt">&lt;/roomConfig&gt;</span>
+        <span class="nt">&lt;roomConfig</span> <span class="na">code=</span><span class="s">"SGLSTD"</span> <span class="na">name=</span><span class="s">"Individual Estándar"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;rateConfig</span> <span class="na">code=</span><span class="s">"NRF"</span> <span class="na">name=</span><span class="s">"Tarifa Non Refundable"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"HB"</span> <span class="na">name=</span><span class="s">"Half Board"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"RO"</span> <span class="na">name=</span><span class="s">"Room Only"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">code=</span><span class="s">"NRE"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/rateConfig&gt;</span>
+            <span class="nt">&lt;rateConfig</span> <span class="na">code=</span><span class="s">"ONLINE"</span> <span class="na">name=</span><span class="s">"Tarifa Online"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"HB"</span> <span class="na">name=</span><span class="s">"Half Board"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"RO"</span> <span class="na">name=</span><span class="s">"Room Only"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">code=</span><span class="s">"ON"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/rateConfig&gt;</span>
+        <span class="nt">&lt;/roomConfig&gt;</span>
+    <span class="nt">&lt;/hotelConfig&gt;</span>
+<span class="nt">&lt;/PhoenixHotelConfigurationResponse&gt;</span>
+</code></pre></div>
+<p>La recuperación de habitaciones y tarifas se realizará mediante el mensaje <b>PhoenixRoomRatesRetrievalRequest</b> que enviará Hotetec al cliente y el cliente deberá responder con un mensaje <b>PhoenixRoomRatesRetrievalResponse</b>. </p>
+
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>credentials</td>
+<td><a href="##Credentials"><strong>Credentials</strong></a></td>
+<td>Sí</td>
+<td>Credenciales de autenticación del usuario. Las debe proporcionar el cliente a Hotetec</td>
+</tr>
+<tr>
+<td>hotelCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de hotel</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+<h2 id='phoenixhotelconfigurationrequest'>PhoenixHotelConfigurationRequest</h2>
+<p>Mensaje de respuesta de recuperación de habitaciones y tarifas </p>
 
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>hotelConfig</td>
+<td><a href="##HotelConfig"><strong>HotelConfig</strong></a></td>
+<td>Sí</td>
+<td>Definición de la configuracion del hotel</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>error</td>
+<td><a href="##Error"><strong>Error</strong></a></td>
+<td>Sí</td>
+<td>Código de hotel</td>
+</tr>
+</tbody></table>
+<h1 id='phoenixroomrateupdate'>PhoenixRoomRateUpdate</h1>
+<blockquote>
+<p>Ejemplo PhoenixRoomRateUpdateRequest</p>
+</blockquote>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;PhoenixRoomRateUpdateRequest&gt;</span>
+    <span class="nt">&lt;credentials&gt;</span>
+        <span class="nt">&lt;system&gt;</span>PHX<span class="nt">&lt;/system&gt;</span>
+        <span class="nt">&lt;vendorCode&gt;</span>TESTDAVID<span class="nt">&lt;/vendorCode&gt;</span>
+        <span class="nt">&lt;user&gt;</span>YOUR_CHANNEL_USER<span class="nt">&lt;/user&gt;</span>
+        <span class="nt">&lt;password&gt;</span>YOUR_CHANNEL_PASSWORD<span class="nt">&lt;/password&gt;</span>
+    <span class="nt">&lt;/credentials&gt;</span>
+    <span class="nt">&lt;hotelCode&gt;</span>TEST<span class="nt">&lt;/hotelCode&gt;</span>
+    <span class="nt">&lt;rate</span> <span class="na">code=</span><span class="s">"AAA"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;room</span> <span class="na">code=</span><span class="s">"1234"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;applicableDates</span> <span class="na">dateFrom=</span><span class="s">"01/03/2020"</span> <span class="na">dateTo=</span><span class="s">"08/03/2020"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;availableQuota&gt;</span>150<span class="nt">&lt;/availableQuota&gt;</span>
+                <span class="nt">&lt;release&gt;</span>10<span class="nt">&lt;/release&gt;</span>
+                <span class="nt">&lt;minimumStay&gt;</span>3<span class="nt">&lt;/minimumStay&gt;</span>
+                <span class="nt">&lt;maximumStay&gt;</span>20<span class="nt">&lt;/maximumStay&gt;</span>
+                <span class="nt">&lt;checkinRestriction&gt;</span>Open<span class="nt">&lt;/checkinRestriction&gt;</span>
+                <span class="nt">&lt;checkoutRestriction&gt;</span>Open<span class="nt">&lt;/checkoutRestriction&gt;</span>
+                <span class="nt">&lt;mealPlan</span> <span class="na">code=</span><span class="s">"RO"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;occupation</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span> <span class="na">status=</span><span class="s">"Open"</span> <span class="na">amount=</span><span class="s">"512.0"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/mealPlan&gt;</span>
+            <span class="nt">&lt;/applicableDates&gt;</span>
+        <span class="nt">&lt;/room&gt;</span>
+    <span class="nt">&lt;/rate&gt;</span>
+<span class="nt">&lt;/PhoenixRoomRateUpdateRequest&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>Ejemplo PhoenixRoomRateUpdateResponse</p>
+</blockquote>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;PhoenixRoomRateUpdateResponse&gt;</span> 
+   <span class="nt">&lt;status&gt;</span>OK<span class="nt">&lt;/status&gt;</span> 
+<span class="nt">&lt;/PhoenixRoomRateUpdateResponse&gt;</span> 
+
+</code></pre></div>
+<p>La actualización de precios e inventario se realizará mediante el mensaje <b>PhoenixRoomRateUpdateRequest</b> que enviará Hotetec al cliente y el cliente deberá responder con un mensaje <b>PhoenixRoomRateUpdateResponse</b>. </p>
+<h2 id='phoenixroomrateupdaterequest'>PhoenixRoomRateUpdateRequest</h2>
+<p>Mensaje de petición de actualización de precios e inventario </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>credentials</td>
+<td><a href="##Credentials"><strong>Credentials</strong></a></td>
+<td>Sí</td>
+<td>Credenciales de autenticación del usuario. Las debe proporcionar el cliente a Hotetec</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>hotelCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de hotel</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>rate</td>
+<td>[<strong>Rate</strong>] <a href="##Rate"> 1 .. N </a></td>
+<td>Sí</td>
+<td>Información de tarifas</td>
+</tr>
+</tbody></table>
+<h2 id='phoenixroomrateupdateresponse'>PhoenixRoomRateUpdateResponse</h2>
+<p>Mensaje de respuesta de actualización de precios e inventario</p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Indica si se ha procesado correctamente la petición o no.<br/>Valores OK / KO.</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>error</td>
+<td><a href="##Error"><strong>Error</strong></a></td>
+<td>No</td>
+<td>Indica si ha habido algún error.</td>
+</tr>
+</tbody></table>
+<h1 id='phoenixbookingnotification'>PhoenixBookingNotification</h1><div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;PhoenixBookingNotificationRequest&gt;</span>
+    <span class="nt">&lt;booking&gt;</span>
+        <span class="nt">&lt;reference&gt;</span>A00123<span class="nt">&lt;/reference&gt;</span>
+        <span class="nt">&lt;externReference&gt;</span>PMI01254<span class="nt">&lt;/externReference&gt;</span>
+        <span class="nt">&lt;createDateTime&gt;</span>01/06/2020 12:00:00<span class="nt">&lt;/createDateTime&gt;</span>
+        <span class="nt">&lt;checkinDate&gt;</span>01/08/2020<span class="nt">&lt;/checkinDate&gt;</span>
+        <span class="nt">&lt;checkoutDate&gt;</span>05/08/2020<span class="nt">&lt;/checkoutDate&gt;</span>
+        <span class="nt">&lt;agencyCode&gt;</span>TST<span class="nt">&lt;/agencyCode&gt;</span>
+        <span class="nt">&lt;externAgency&gt;</span>Extern Agency<span class="nt">&lt;/externAgency&gt;</span>
+        <span class="nt">&lt;vendorCode&gt;</span>ABC<span class="nt">&lt;/vendorCode&gt;</span>
+        <span class="nt">&lt;hotelCode&gt;</span>30625<span class="nt">&lt;/hotelCode&gt;</span>
+        <span class="nt">&lt;amount&gt;</span>1650.40<span class="nt">&lt;/amount&gt;</span>
+        <span class="nt">&lt;contactPerson</span> <span class="na">name=</span><span class="s">"TEST"</span> <span class="na">surname=</span><span class="s">"TEST"</span> <span class="na">email=</span><span class="s">"test@test.com"</span> <span class="na">telephone=</span><span class="s">"test@test.com"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;bookingRoom</span> <span class="na">id=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;status&gt;</span>Confirmed<span class="nt">&lt;/status&gt;</span>
+            <span class="nt">&lt;checkinDate&gt;</span>01/08/2020<span class="nt">&lt;/checkinDate&gt;</span>
+            <span class="nt">&lt;checkoutDate&gt;</span>05/08/2020<span class="nt">&lt;/checkoutDate&gt;</span>
+            <span class="nt">&lt;roomCode&gt;</span>DBL<span class="nt">&lt;/roomCode&gt;</span>
+            <span class="nt">&lt;mealPlan&gt;</span>RO<span class="nt">&lt;/mealPlan&gt;</span>
+            <span class="nt">&lt;amount&gt;</span>1650.40<span class="nt">&lt;/amount&gt;</span>
+            <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"01/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"02/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"03/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"04/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"1"</span> <span class="na">name=</span><span class="s">"Guest name"</span> <span class="na">amount=</span><span class="s">"825.25"</span> <span class="na">age=</span><span class="s">"33"</span> <span class="na">birthDate=</span><span class="s">"01/04/1987"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"2"</span> <span class="na">name=</span><span class="s">"Guest name 2"</span> <span class="na">amount=</span><span class="s">"825.25"</span> <span class="na">age=</span><span class="s">"35"</span> <span class="na">birthDate=</span><span class="s">"01/04/1985"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;arrivalFlight</span> <span class="na">dateTime=</span><span class="s">"01/01/2021 00:00:00"</span> <span class="na">flightNumber=</span><span class="s">"abc1234"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;departureFlight</span> <span class="na">dateTime=</span><span class="s">" 06 01 2021 00:00:00"</span> <span class="na">flightNumber=</span><span class="s">"xyz9876"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;remark</span> <span class="na">text=</span><span class="s">" Non smoking room please"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/bookingRoom&gt;</span>
+        <span class="nt">&lt;remark</span> <span class="na">text=</span><span class="s">"Nice room please"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;paymentCardDetail</span> <span class="na">holder=</span><span class="s">"Guest name"</span> <span class="na">number=</span><span class="s">"4111111111111111"</span> <span class="na">expiryDate=</span><span class="s">"01/04/2025"</span> <span class="na">securityCode=</span><span class="s">"123"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/booking&gt;</span>
+<span class="nt">&lt;/PhoenixBookingNotificationRequest&gt;</span>
+</code></pre></div>
+<p>Cuando se realice una reserva en el cliente, éste deberá mandar una notificación con la reserva a la plataforma de Hotetec mediante el mensaje <b>PhoenixBookingNotificationRequest</b>. Hotetec responderá esta notificación mediante la respuesta <b>PhoenixBookingNotificationResponse</b>. </p>
+
+<aside class="warning">
+<b>NOTA IMPORTANTE:</b>: Cuando se notifique una reserva a Hotetec, la reserva <b>SIEMPRE DEBERÁ CONTENER TODAS LAS HABITACIONES</b>, tanto las que se hayan cancelado, como las que se hayan modificado o creado nuevas.
+</aside>
+
+<p>Como indica el recuadro superior si por ejemplo se notifica una reserva de dos habitaciones y posteriormente se cancela una habitación, deberán indicarse las DOS habitaciones, una con el estado CONFIRMADO y la otra con el estado CANCELADO.</p>
+<h2 id='phoenixbookingnotificationrequest'>PhoenixBookingNotificationRequest</h2>
+<p>Mensaje de notificación de reserva que debe enviar el cliente a Hotetec.</p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>booking</td>
+<td><a href="##Booking"><strong>Booking</strong></a></td>
+<td>Sí</td>
+<td>Notificación de reserva</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;PhoenixBookingNotificationResponse&gt;</span> 
+   <span class="nt">&lt;status&gt;</span>OK<span class="nt">&lt;/status&gt;</span> 
+<span class="nt">&lt;/PhoenixBookingNotificationResponse&gt;</span> 
+</code></pre></div><h2 id='phoenixbookingnotificationresponse'>PhoenixBookingNotificationResponse</h2>
+<p>Mensaje de respuesta de notificación de reserva. </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Indica si se ha procesado correctamente la petición o no.<br/>Valores OK / KO.</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+<td>error</td>
+<td><a href="##Error"><strong>Error</strong></a></td>
+<td>No</td>
+<td>Indica si ha habido algun error.</td>
+</tr>
+</tbody></table>
+<h1 id='tipos-complejos'>Tipos Complejos</h1>
+<p>Aqui se describen algunos de los tipos complejos definidos en los mensajes de este documento</p>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;credentials&gt;</span>
+    <span class="nt">&lt;system&gt;</span>TEST<span class="nt">&lt;/system&gt;</span>
+    <span class="nt">&lt;vendorCode&gt;</span>VENDORTEST<span class="nt">&lt;/vendorCode&gt;</span>
+    <span class="nt">&lt;user&gt;</span>USERTEST<span class="nt">&lt;/user&gt;</span>
+    <span class="nt">&lt;password&gt;</span>SECRETPASSWORD<span class="nt">&lt;/password&gt;</span>
+<span class="nt">&lt;/credentials&gt;</span> 
+</code></pre></div><h2 id='credentials'>Credentials</h2>
+<p>Indica las credenciales de acceso para la plataforma. </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>system</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Sistema de acceso a la plataforma</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>vendorCode</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Código de proveedor</td>
 </tr>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>user</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de usuario</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>password</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Password del usuario</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;hotelConfig</span> <span class="na">code=</span><span class="s">"1234"</span> <span class="na">name=</span><span class="s">"Hotel Test"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;roomConfig</span> <span class="na">code=</span><span class="s">"2542"</span> <span class="na">name=</span><span class="s">"Doble Vista Mar"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"2"</span> <span class="na">children=</span><span class="s">" 0"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"2"</span> <span class="na">children=</span><span class="s">"1"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;rateConfig</span> <span class="na">code=</span><span class="s">"1234"</span> <span class="na">name=</span><span class="s">"Hotel Test"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"RO"</span> <span class="na">name=</span><span class="s">" Solo Alojamiento"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"AI"</span> <span class="na">name=</span><span class="s">" Todo Incluido"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;property</span> <span class="na">code=</span><span class="s">"NRE"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/rateConfig&gt;</span>
+    <span class="nt">&lt;/roomConfig&gt;</span>
+<span class="nt">&lt;/hotelConfig&gt;</span>
+
+</code></pre></div><h2 id='hotelconfig'>HotelConfig</h2>
+<p>Información de la configuración de un hotel </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código del hotel</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>@name</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Nombre del hotel</td>
 </tr>
 <tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>roomConfig</td>
+<td><a href="#RoomConfig"><strong>RoomConfig</strong></a> [ 1..N ]</td>
+<td>Sí</td>
+<td>Informacion de habitaciones</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;roomConfig</span> <span class="na">code=</span><span class="s">"2542"</span> <span class="na">name=</span><span class="s">"Doble Vista Mar"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"2"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"2"</span> <span class="na">children=</span><span class="s">"1"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;rateConfig</span> <span class="na">code=</span><span class="s">"1234"</span> <span class="na">name=</span><span class="s">"Hotel Test"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"RO"</span> <span class="na">name=</span><span class="s">"Solo Alojamiento"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"AI"</span> <span class="na">name=</span><span class="s">"Todo Incluido"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">code=</span><span class="s">"NRE"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/rateConfig&gt;</span>
+<span class="nt">&lt;/roomConfig&gt;</span> 
+
+</code></pre></div><h2 id='roomconfig'>RoomConfig</h2>
+<p>Información de la configuración de una habitación</p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de la habitación</td>
+</tr>
+<tr>
+<td>@name</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Nombre de la habitación</td>
+</tr>
+<tr>
+<td>occupationConfig</td>
+<td><a href="#OccupationConfig"><strong>OccupationConfig</strong></a> [ 1..N ]</td>
+<td>Sí</td>
+<td>Información de las ocupaciones permitidas por la habitación</td>
+</tr>
+<tr>
+<td>rateConfig</td>
+<td><a href="#RateConfig"><strong>RateConfig</strong></a> [ 1..N ]</td>
+<td>Sí</td>
+<td>Información de las tarifas de esta habitación</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"2” children="</span><span class="err">0”</span> <span class="na">babies=</span><span class="s">"0”/</span><span class="nt">&gt;</span>
+</code></pre></div><h2 id='occupationconfig'>OccupationConfig</h2>
+<p>Información de la configuración de una ocupación para una habitación </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@adults</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Número de adultos de la ocupación</td>
+</tr>
+<tr>
+<td>@children</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Número de niños de la ocupación</td>
+</tr>
+<tr>
+<td>@babies</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Número de bebés de la ocupación</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;rateConfig</span> <span class="na">code=</span><span class="s">"1234"</span> <span class="na">name=</span><span class="s">"Hotel Test"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"RO"</span> <span class="na">name=</span><span class="s">"Solo Alojamiento"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"AI"</span> <span class="na">name=</span><span class="s">"Todo Incluido"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">code=</span><span class="s">"NRE"</span><span class="nt">/&gt;</span>      
+<span class="nt">&lt;/rateConfig&gt;</span>
+
+</code></pre></div><h2 id='rateconfig'>RateConfig</h2>
+<p>Información de la configuración de una tarifa </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de la tarifa</td>
+</tr>
+<tr>
+<td>@name</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Nombre de la tarifa</td>
+</tr>
+<tr>
+<td>mealPlanConfig</td>
+<td><a href="#MealPlanConfig"><strong>MealPlanConfig</strong></a> [ 1..N ]</td>
+<td>Sí</td>
+<td>Información de los regimenes alimenticios para la tarifa</td>
+</tr>
+<tr>
+<td>property</td>
+<td><a href="#Property"><strong>Property</strong></a> [ 1..N ]</td>
+<td>No</td>
+<td>Información de las propiedades de las tarifas</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"RO” name="</span><span class="err">Solo</span> <span class="err">Alojamiento”</span><span class="nt">/&gt;</span> 
+</code></pre></div><h2 id='mealplanconfig'>MealPlanConfig</h2>
+<p>Información de la configuración de un régimen alimenticio </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código del régimen alimenticio</td>
+</tr>
+<tr>
+<td>@name</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Nombre del régimen alimenticio</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;property</span> <span class="na">code=</span><span class="s">"MED” value="</span><span class="err">55”</span><span class="nt">/&gt;</span>
+</code></pre></div><h2 id='property'>Property</h2>
+<p>Información de una propiedad de tarifa </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de la propiedad</td>
+</tr>
+<tr>
+<td>@value</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Valor de la propiedad</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;error</span> <span class="na">code=</span><span class="s">"PHX-3” message="</span><span class="err">Error</span> <span class="err">al</span> <span class="err">recuperar</span> <span class="err">la</span> <span class="err">tarifa”</span><span class="nt">/&gt;</span>
+</code></pre></div><h2 id='error'>Error</h2>
+<p>Información de un error. </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de error</td>
+</tr>
+<tr>
+<td>@message</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Mensaje de error</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;rate</span> <span class="na">code=</span><span class="s">"AAA"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;room</span> <span class="na">code=</span><span class="s">"1234"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;applicableDates</span> <span class="na">dateFrom=</span><span class="s">"01/03/2020"</span> <span class="na">dateTo=</span><span class="s">"08/03/2020"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;availableQuota&gt;</span>150<span class="nt">&lt;/availableQuota&gt;</span>
+            <span class="nt">&lt;release&gt;</span>10<span class="nt">&lt;/release&gt;</span>
+            <span class="nt">&lt;minimumStay&gt;</span>3<span class="nt">&lt;/minimumStay&gt;</span>
+            <span class="nt">&lt;maximumStay&gt;</span>20<span class="nt">&lt;/maximumStay&gt;</span>
+            <span class="nt">&lt;checkinRestriction&gt;</span>Open<span class="nt">&lt;/checkinRestriction&gt;</span>
+            <span class="nt">&lt;checkoutRestriction&gt;</span>Open<span class="nt">&lt;/checkoutRestriction&gt;</span>
+            <span class="nt">&lt;mealPlan</span> <span class="na">code=</span><span class="s">"RO"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;occupation</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span> <span class="na">status=</span><span class="s">"Open"</span> <span class="na">amount=</span><span class="s">"512.0"</span> <span class="err">`</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/mealPlan&gt;</span>
+        <span class="nt">&lt;/applicableDates&gt;</span>
+    <span class="nt">&lt;/room&gt;</span>
+<span class="nt">&lt;/rate&gt;</span>
+</code></pre></div><h2 id='rate'>Rate</h2>
+<p>Información de actualización de precio e inventario de una tarifa </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de tarifa</td>
+</tr>
+<tr>
+<td>room</td>
+<td><a href="#Room"><strong>Room</strong></a> [ 1..N ]</td>
+<td>Sí</td>
+<td>Informacion de la habitación</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;room</span> <span class="na">code=</span><span class="s">"1234"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;applicableDates</span> <span class="na">dateFrom=</span><span class="s">"01/03/2020"</span> <span class="na">dateTo=</span><span class="s">"08/03/2020"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;availableQuota&gt;</span>150<span class="nt">&lt;/availableQuota&gt;</span>
+        <span class="nt">&lt;release&gt;</span>10<span class="nt">&lt;/release&gt;</span>
+        <span class="nt">&lt;minimumStay&gt;</span>3<span class="nt">&lt;/minimumStay&gt;</span>
+        <span class="nt">&lt;maximumStay&gt;</span>20<span class="nt">&lt;/maximumStay&gt;</span>
+        <span class="nt">&lt;checkinRestriction&gt;</span>Open<span class="nt">&lt;/checkinRestriction&gt;</span>
+        <span class="nt">&lt;checkoutRestriction&gt;</span>Open<span class="nt">&lt;/checkoutRestriction&gt;</span>
+        <span class="nt">&lt;mealPlan</span> <span class="na">code=</span><span class="s">"RO"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;occupation</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span> <span class="na">status=</span><span class="s">"Open"</span> <span class="na">amount=</span><span class="s">"512.0"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/mealPlan&gt;</span>
+    <span class="nt">&lt;/applicableDates&gt;</span>
+<span class="nt">&lt;/room&gt;</span>
+</code></pre></div><h2 id='room'>Room</h2>
+<p>Información de actualización de precio e inventario de una habitación </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de la habitación</td>
+</tr>
+<tr>
+<td>applicableDates</td>
+<td><a href="#ApplicableDates"><strong>ApplicableDates</strong></a> [ 1..N ]</td>
+<td>Sí</td>
+<td>Fechas de aplicación</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;applicableDates</span> <span class="na">dateFrom=</span><span class="s">"01/03/2020"</span> <span class="na">dateTo=</span><span class="s">"08/03/2020"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;availableQuota&gt;</span>150<span class="nt">&lt;/availableQuota&gt;</span>
+    <span class="nt">&lt;release&gt;</span>10<span class="nt">&lt;/release&gt;</span>
+    <span class="nt">&lt;minimumStay&gt;</span>3<span class="nt">&lt;/minimumStay&gt;</span>
+    <span class="nt">&lt;maximumStay&gt;</span>20<span class="nt">&lt;/maximumStay&gt;</span>
+    <span class="nt">&lt;checkinRestriction&gt;</span>Open<span class="nt">&lt;/checkinRestriction&gt;</span>
+    <span class="nt">&lt;checkoutRestriction&gt;</span>Open<span class="nt">&lt;/checkoutRestriction&gt;</span>
+    <span class="nt">&lt;mealPlan</span> <span class="na">code=</span><span class="s">"RO"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;occupation</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span> <span class="na">status=</span><span class="s">"Open"</span> <span class="na">amount=</span><span class="s">"512.0"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/mealPlan&gt;</span>
+<span class="nt">&lt;/applicableDates&gt;</span> 
+
+</code></pre></div><h2 id='applicabledates'>ApplicableDates</h2>
+<p>Información del rango de fechas de la actualización</p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@dateFrom</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Fecha de inicio en formato dd/MM/yyyy</td>
+</tr>
+<tr>
+<td>@dateTo</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Fecha de fin en formato dd/MM/yyyy</td>
+</tr>
+<tr>
+<td>availableQuota</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Habitaciones disponibles (cupo disponible)</td>
+</tr>
+<tr>
+<td>release</td>
+<td><em>Integer</em></td>
+<td>No</td>
+<td>Días de release</td>
+</tr>
+<tr>
+<td>minimumStay</td>
+<td><em>Integer</em></td>
+<td>No</td>
+<td>Días de estancia mínima</td>
+</tr>
+<tr>
+<td>maximumStay</td>
+<td><em>Integer</em></td>
+<td>No</td>
+<td>Días de estancia máxima</td>
+</tr>
+<tr>
+<td>checkinRestriction</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Indica si el dia de checkin tiene restringida la entrada<br/>Valores Open, Closed</td>
+</tr>
+<tr>
+<td>checkoutRestriction</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Indica si el dia de checkout tiene restringida la salida<br/>Valores Open, Closed</td>
+</tr>
+<tr>
+<td>mealPlan</td>
+<td><a href="#MealPlan"><strong>MealPlan</strong></a> [ 1..N ]</td>
+<td>Sí</td>
+<td>Información de actualización de régimen.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;mealPlan</span> <span class="na">code=</span><span class="s">"RO"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;occupation</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span> <span class="na">status=</span><span class="s">"Open"</span> <span class="na">amount=</span><span class="s">"512.0"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/mealPlan&gt;</span>
+</code></pre></div><h2 id='mealplan'>MealPlan</h2>
+<p>Información de actualización de un régimen alimenticio </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@code</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de regimen alimenticio</td>
+</tr>
+<tr>
+<td>occupation</td>
+<td><a href="#Occupation"><strong>Occupation</strong></a> [ 1..N ]</td>
+<td>Sí</td>
+<td>Información de actualización de ocupación</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;occupation</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span> <span class="na">statuss=</span><span class="s">"0pen"</span> <span class="na">amount=</span><span class="s">"512.0"</span> <span class="nt">/&gt;</span> 
+</code></pre></div><h2 id='occupation'>Occupation</h2>
+<p>Información de actualización de una ocupación </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@adults</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Número de adultos</td>
+</tr>
+<tr>
+<td>@children</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Número de niños</td>
+</tr>
+<tr>
+<td>@babies</td>
+<td><em>Integer</em></td>
+<td>Sí</td>
+<td>Número de bebes</td>
+</tr>
+<tr>
+<td>@status</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Indica el estado para la ocupación<br/>Valores Open, Closed</td>
+</tr>
+<tr>
+<td>@amount</td>
+<td><em>Double</em></td>
+<td>Sí</td>
+<td>Indica el importe diario para la ocupación</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;booking&gt;</span>
+    <span class="nt">&lt;reference&gt;</span>A00123<span class="nt">&lt;/reference&gt;</span>
+    <span class="nt">&lt;externReference&gt;</span>PMI01254<span class="nt">&lt;/externReference&gt;</span>
+    <span class="nt">&lt;createDateTime&gt;</span>01/06/2020 12:00:00<span class="nt">&lt;/createDateTime&gt;</span>
+    <span class="nt">&lt;checkinDate&gt;</span>01/08/2020<span class="nt">&lt;/checkinDate&gt;</span>
+    <span class="nt">&lt;checkoutDate&gt;</span>05/08/2020<span class="nt">&lt;/checkoutDate&gt;</span>
+    <span class="nt">&lt;agencyCode&gt;</span>TST<span class="nt">&lt;/agencyCode&gt;</span>
+    <span class="nt">&lt;externAgency&gt;</span>Extern Agency<span class="nt">&lt;/externAgency&gt;</span>
+    <span class="nt">&lt;vendorCode&gt;</span>ABC<span class="nt">&lt;/vendorCode&gt;</span>
+    <span class="nt">&lt;hotelCode&gt;</span>30625<span class="nt">&lt;/hotelCode&gt;</span>
+    <span class="nt">&lt;amount&gt;</span>1650.40<span class="nt">&lt;/amount&gt;</span>
+    <span class="nt">&lt;contactPerson</span> <span class="na">name=</span><span class="s">"TEST"</span> <span class="na">surname=</span><span class="s">"TEST"</span> <span class="na">email=</span><span class="s">"test@test.com"</span> <span class="na">telephone=</span><span class="s">"test@test.com"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;bookingRoom</span> <span class="na">id=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;status&gt;</span>Confirmed<span class="nt">&lt;/status&gt;</span>
+        <span class="nt">&lt;checkinDate&gt;</span>01/08/2020<span class="nt">&lt;/checkinDate&gt;</span>
+        <span class="nt">&lt;checkoutDate&gt;</span>05/08/2020<span class="nt">&lt;/checkoutDate&gt;</span>
+        <span class="nt">&lt;roomCode&gt;</span>DBL<span class="nt">&lt;/roomCode&gt;</span>
+        <span class="nt">&lt;mealPlan&gt;</span>RO<span class="nt">&lt;/mealPlan&gt;</span>
+        <span class="nt">&lt;amount&gt;</span>1650.40<span class="nt">&lt;/amount&gt;</span>
+        <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"01/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"02/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"03/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"04/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"1"</span> <span class="na">name=</span><span class="s">"Guest name"</span> <span class="na">amount=</span><span class="s">"825.25"</span> <span class="na">age=</span><span class="s">"33"</span> <span class="na">birthDate=</span><span class="s">"01/04/1987"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"2"</span> <span class="na">name=</span><span class="s">"Guest name 2"</span> <span class="na">amount=</span><span class="s">"825.25"</span> <span class="na">age=</span><span class="s">"35"</span> <span class="na">birthDate=</span><span class="s">"01/04/1985"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;arrivalFlight</span> <span class="na">dateTime=</span><span class="s">"01/01/2021 00:00:00"</span> <span class="na">flightNumber=</span><span class="s">"abc1234"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;departureFlight</span> <span class="na">dateTime=</span><span class="s">" 06 01 2021 00:00:00"</span> <span class="na">flightNumber=</span><span class="s">"xyz9876"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;remark</span> <span class="na">text=</span><span class="s">" Non smoking room please"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/bookingRoom&gt;</span>
+    <span class="nt">&lt;remark</span> <span class="na">text=</span><span class="s">"Nice room please"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;paymentCardDetail</span> <span class="na">holder=</span><span class="s">"Guest name"</span> <span class="na">number=</span><span class="s">"4111111111111111"</span> <span class="na">expiryDate=</span><span class="s">"01/04/2025"</span> <span class="na">securityCode=</span><span class="s">"123"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/booking&gt;</span>
+
+</code></pre></div><h2 id='booking'>Booking</h2>
+<p>Información de una reserva. Se aceptan reservas sin valorar (sin nodo amount), pero aparecerán como amount 0. 
+<b>NOTA !! Siempre deben indicarse TODOS los bookingRoom de una reserva </b></p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>reference</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Localizador de la reserva</td>
+</tr>
+<tr>
+<td>externReference</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Localizador de la agencia / terceros</td>
+</tr>
+<tr>
+<td>createDateTime</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>dia y hora de la creacion de la reserva.<br/>Formato dd/MM/yyyy HH:mm:ss</td>
+</tr>
+<tr>
+<td>checkinDate</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Dia de entrada (más reciente de las habitaciones).<br/>Formato dd/MM/yyyy</td>
+</tr>
+<tr>
+<td>checkoutDate</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Dia de salida (más tarde de las habitaciones).<br/>Formato dd/MM/yyyy</td>
+</tr>
+<tr>
+<td>agencyCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de agencia (Proporcionado por Hotetec)</td>
+</tr>
+<tr>
+<td>externAgency</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Nombre de agencia final / terceros. Es la agencia final que realiza la reserva, si el cliente tiene agencias que se conecten a él.<br/>Hotetec &lt;-&gt; Cliente &lt;-&gt; Agencia final</td>
+</tr>
+<tr>
+<td>vendorCode</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Código de proveedor. Proveedor de Hotetec sobre el cual se realiza la reserva.(Proporcionado por hotetec)</td>
+</tr>
+<tr>
+<td>hotelCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de hotel</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;contactPerson</span> <span class="na">name=</span><span class="s">"TEST"</span> <span class="na">surname=</span><span class="s">"TEST"</span> <span class="na">email=</span><span class="s">"test@test.com"</span> <span class="na">telephone=</span><span class="s">"test@test.com"</span><span class="nt">/&gt;</span> 
+</code></pre></div><h2 id='contactperson'>ContactPerson</h2>
+<p>Información de la persona de contacto de la reserva. </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@name</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Nombre de la persona de contacto</td>
+</tr>
+<tr>
+<td>@surname</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Apellidos de la persona de contacto</td>
+</tr>
+<tr>
+<td>@email</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Email de la persona de contacto</td>
+</tr>
+<tr>
+<td>@telephone</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Número de telefono</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;bookingRoom</span> <span class="na">id=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;status&gt;</span>Confirmed<span class="nt">&lt;/status&gt;</span>
+    <span class="nt">&lt;checkinDate&gt;</span>01/08/2020<span class="nt">&lt;/checkinDate&gt;</span>
+    <span class="nt">&lt;checkoutDate&gt;</span>05/08/2020<span class="nt">&lt;/checkoutDate&gt;</span>
+    <span class="nt">&lt;roomCode&gt;</span>DBL<span class="nt">&lt;/roomCode&gt;</span>
+    <span class="nt">&lt;mealPlan&gt;</span>RO<span class="nt">&lt;/mealPlan&gt;</span>
+    <span class="nt">&lt;amount&gt;</span>1650.40<span class="nt">&lt;/amount&gt;</span>
+    <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"01/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"02/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"03/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"04/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"1"</span> <span class="na">name=</span><span class="s">"Guest name"</span> <span class="na">amount=</span><span class="s">"825.25"</span> <span class="na">age=</span><span class="s">"33"</span> <span class="na">birthDate=</span><span class="s">"01/04/1987"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"2"</span> <span class="na">name=</span><span class="s">"Guest name 2"</span> <span class="na">amount=</span><span class="s">"825.25"</span> <span class="na">age=</span><span class="s">"35"</span> <span class="na">birthDate=</span><span class="s">"01/04/1985"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arrivalFlight</span> <span class="na">dateTime=</span><span class="s">"01/01/2021 00:00:00"</span> <span class="na">flightNumber=</span><span class="s">"abc1234"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;departureFlight</span> <span class="na">dateTime=</span><span class="s">" 06 01 2021 00:00:00"</span> <span class="na">flightNumber=</span><span class="s">"xyz9876"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;remark</span> <span class="na">text=</span><span class="s">" Non smoking room please"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/bookingRoom&gt;</span> 
+
+</code></pre></div><h2 id='bookingroom'>BookingRoom</h2>
+<p>Información de una habitación de la reserva. Se permiten habitaciones sin valorar (sin nodo amount) pero aparecerán con amount 0. El nodo rateDay también es opcional si son reservas sin valorar o no se dispone de la información de contrato. 
+<b>NOTA !! Siempre deben indicarse TODOS los bookingRoom de una reserva</b></p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@id</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código identificativo de la habitación</td>
+</tr>
+<tr>
+<td>status</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Estado de la habitación reserva.<br/>Valores Confirmed / Cancelled</td>
+</tr>
+<tr>
+<td>checkinDate</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Dia de entrada.<br/>Formato dd/MM/yyyy</td>
+</tr>
+<tr>
+<td>checkoutDate</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Dia de salida.<br/>Formato dd/MM/yyyy</td>
+</tr>
+<tr>
+<td>roomCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de habitación</td>
+</tr>
+<tr>
+<td>mealPlan</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de régimen alimenticio</td>
+</tr>
+<tr>
+<td>amount</td>
+<td><em>Double</em></td>
+<td>No</td>
+<td>Importe de la habitación</td>
+</tr>
+<tr>
+<td>rateDay</td>
+<td><a href="#RateDay"><strong>RateDay</strong></a> [ 0..N ]</td>
+<td>No</td>
+<td>Desglose por día de la tarifa</td>
+</tr>
+<tr>
+<td>guest</td>
+<td><a href="#Guest"><strong>Guest</strong></a> [ 1..N ]</td>
+<td>Sí</td>
+<td>Pasajeros de la reserva</td>
+</tr>
+<tr>
+<td>arrivalFlight</td>
+<td><a href="#FlightInformation"><strong>FlightInformation</strong></a></td>
+<td>No</td>
+<td>Informacion del vuelo de llegada</td>
+</tr>
+<tr>
+<td>departureFlight</td>
+<td><a href="#FlightInformation"><strong>FlightInformation</strong></a></td>
+<td>No</td>
+<td>Informacion del vuelo de salida</td>
+</tr>
+<tr>
+<td>remark</td>
+<td><a href="#Remark"><strong>Remark</strong></a> [ 0 .. N ]</td>
+<td>No</td>
+<td>Notas para la habitación</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"01/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span> <span class="nt">/&gt;</span> 
+</code></pre></div><h2 id='rateday'>RateDay</h2>
+<p>Desglose de tarifas por día </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@day</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Dia de aplicacion del elemento.<br/>Formato dd/MM/yyyy</td>
+</tr>
+<tr>
+<td>@rateCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Código de tarifa</td>
+</tr>
+<tr>
+<td>@amount</td>
+<td><em>Double</em></td>
+<td>Sí</td>
+<td>Importe del día</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"1"</span> <span class="na">name=</span><span class="s">"Guest name"</span> <span class="na">amount=</span><span class="s">"825.25"</span> <span class="na">age=</span><span class="s">"33"</span> <span class="na">birthDate=</span><span class="s">"01/04/1987"</span><span class="nt">/&gt;</span>
+</code></pre></div><h2 id='guest'>Guest</h2>
+<p>Información de un pasajero de la reserva </p>
+
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@id</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Identificador de pasajero</td>
+</tr>
+<tr>
+<td>@name</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Nombre de pasajero</td>
+</tr>
+<tr>
+<td>@amount</td>
+<td><em>Double</em></td>
+<td>No</td>
+<td>Importe del pasajero</td>
+</tr>
+<tr>
+<td>@age</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Edad del pasajero</td>
+</tr>
+<tr>
+<td>@birthDate</td>
+<td><em>Date</em></td>
+<td>Si</td>
+<td>Fecha de nacimiento del pasajero.<br/>Formato dd/MM/yyyy</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;remark</span> <span class="na">text=</span><span class="s">"nice room please"</span><span class="nt">/&gt;</span> 
+````
+## Remark
+
+Información de las notas de una reserva 
+
+Elemento | Tipo | Obl? |  Descripción
+--------- | ----------- | ----------- | -----------
+@text | *String* | Sí | Texto del nota
+
+````xml
+<span class="nt">&lt;paymentCardDetail</span> <span class="na">holder=</span><span class="s">"Guest name"</span> <span class="na">number=</span><span class="s">"4111111111111111"</span> <span class="na">expiryDate=</span><span class="s">"01/04/2025"</span> <span class="na">securityCode=</span><span class="s">"123"</span><span class="nt">/&gt;</span> 
+````
+
+## PaymentCardDetail
+
+Información de pago por tarjeta de una reserva 
+
+
+Elemento | Tipo | Obl? |  Descripción
+--------- | ----------- | ----------- | -----------
+@holder | *String* | Sí | Nombre del titular de la tarjeta
+@number | *String* | Sí | Número de la tarjeta
+@expiryDate | *Date* | Sí | Fecha de caducidad de la tarjeta.<span class="nt">&lt;br/&gt;</span>Formato dd/MM/yyyy
+@securityCode | *String* | Sí | CVC código de seguridad
+
+````xml
+    <span class="nt">&lt;arrivalFlight</span> <span class="na">dateTime=</span><span class="s">"01/01/2021 00:00:00"</span> <span class="na">flightNumber=</span><span class="s">"abc1234"</span> <span class="nt">/&gt;</span>
+````
+## FlightInformation
+
+Información de un vuelo de la reserva 
+
+Elemento | Tipo | Obl? |  Descripción
+--------- | ----------- | ----------- | -----------
+@dateTime | *Date* | Sí | Información del día y hora del vuelo.<span class="nt">&lt;br/&gt;</span>Formato dd/MM/yyyy HH:mm:ss
+@flightNumber | *String* | Sí | Número de vuelo
+</code></pre></div><h1 id='ejemplos'>Ejemplos</h1><div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;PhoenixHotelConfigurationResponse&gt;</span>
+    <span class="nt">&lt;hotelConfig</span> <span class="na">code=</span><span class="s">"555"</span> <span class="na">name=</span><span class="s">"Playa del Mar"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;roomConfig</span> <span class="na">code=</span><span class="s">"INV"</span> <span class="na">name=</span><span class="s">"Individual"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;rateConfig</span> <span class="na">code=</span><span class="s">"STD"</span> <span class="na">name=</span><span class="s">"Tarifa Estandard"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"RO"</span> <span class="na">name=</span><span class="s">"Solo Alojamiento"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"BB"</span> <span class="na">name=</span><span class="s">"Bed and breakfast"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"AI"</span> <span class="na">name=</span><span class="s">"Todo Incluido"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/rateConfig&gt;</span>
+        <span class="nt">&lt;/roomConfig&gt;</span>
+        <span class="nt">&lt;roomConfig</span> <span class="na">code=</span><span class="s">"DBL"</span> <span class="na">name=</span><span class="s">"Doble"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">" 1"</span> <span class="na">children=</span><span class="s">"1"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"2"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"2"</span> <span class="na">children=</span><span class="s">"1"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;rateConfig</span> <span class="na">code=</span><span class="s">"STD"</span> <span class="na">name=</span><span class="s">"Tarifa Estandard"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"RO"</span> <span class="na">name=</span><span class="s">"Solo Alojamiento"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"BB"</span> <span class="na">name=</span><span class="s">"Bed and breakfast"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"AI"</span> <span class="na">name=</span><span class="s">"Todo Incluido"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/rateConfig&gt;</span>
+            <span class="nt">&lt;rateConfig</span> <span class="na">code=</span><span class="s">"OFE"</span> <span class="na">name=</span><span class="s">"Tarifa Oferta"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"AI"</span> <span class="na">name=</span><span class="s">"Todo Incluido"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;property</span> <span class="na">code=</span><span class="s">"NRE"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/rateConfig&gt;</span>
+        <span class="nt">&lt;/roomConfig&gt;</span>
+        <span class="nt">&lt;roomConfig</span> <span class="na">code=</span><span class="s">"TPL"</span> <span class="na">name=</span><span class="s">"Triple"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"1"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"2"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"2"</span> <span class="na">children=</span><span class="s">"2"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"3"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;rateConfig</span> <span class="na">code=</span><span class="s">"STD"</span> <span class="na">name=</span><span class="s">"Tarifa Estandard"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"RO"</span> <span class="na">name=</span><span class="s">"Solo Alojamiento"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"BB"</span> <span class="na">name=</span><span class="s">"Bed and breakfast"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;mealPlanConfig</span> <span class="na">code=</span><span class="s">"AI"</span> <span class="na">name=</span><span class="s">"Todo Incluido"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/rateConfig&gt;</span>
+        <span class="nt">&lt;/roomConfig&gt;</span>
+    <span class="nt">&lt;/hotelConfig&gt;</span>
+<span class="nt">&lt;/PhoenixHotelConfigurationResponse&gt;</span>
+</code></pre></div><h2 id='phoenixhotelconfigurationresponse'>PhoenixHotelConfigurationResponse</h2>
+<p>Supongamos el hotel Playa del Mar con código 555. 
+Este hotel tiene 3 habitaciones: Individual (código INV), Doble (código DBL) y Triple (código TPL).. La individual tiene solamente la ocupación para 1 Adulto. 
+La Doble tiene las ocupaciones 1 Adulto + 1 Niño, 2 Adultos y 2 Adultos + 1 niño. Finalmente la Triple tiene las ocupaciones 1 Adulto, 1 Adulto + 1 niño, 2 Adultos, 2 Adultos + 1 niño, 2 Adultos + 2 niños y 3 Adultos. 
+Las tarifas para este hotel son 2 la tarifa Estandard (código STD) y la tarifa Oferta (código OFE). La tarifa Estandard aplica a todas las habitaciones, mientras que la tarifa Premium solo aplica a la doble. La tarifa Estandard tiene disponibles los regímenes de Sólo Alojamiento (código RO), Bed and Breakfast (Código BB) y Todo incluido (Código AI). 
+Mientras que la tarifa Oferta solamente está disponible con régimen Todo Incluido (AI). Esta tarifa es No reembolsable. 
+El mensaje de petición de configuración del hotel quedaría de la siguiente manera: </p>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;PhoenixRoomRateUpdateRequest&gt;</span>
+    <span class="nt">&lt;credentials&gt;</span>
+        <span class="nt">&lt;system&gt;</span>PHX<span class="nt">&lt;/system&gt;</span>
+        <span class="nt">&lt;vendorCode&gt;</span>TESTDAVID<span class="nt">&lt;/vendorCode&gt;</span>
+        <span class="nt">&lt;user&gt;</span>YOUR_CHANNEL_USER<span class="nt">&lt;/user&gt;</span>
+        <span class="nt">&lt;password&gt;</span>YOUR_CHANNEL_PASSWORD<span class="nt">&lt;/password&gt;</span>
+    <span class="nt">&lt;/credentials&gt;</span>
+    <span class="nt">&lt;hotelCode&gt;</span>555<span class="nt">&lt;/hotelCode&gt;</span>
+    <span class="nt">&lt;rate</span> <span class="na">code=</span><span class="s">"STD"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;room</span> <span class="na">code=</span><span class="s">"DBL"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;applicableDates</span> <span class="na">dateFrom=</span><span class="s">"01/01/2020"</span> <span class="na">dateTo=</span><span class="s">"07/01/2020"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;availableQuota&gt;</span>10<span class="nt">&lt;/availableQuota&gt;</span>
+                <span class="nt">&lt;release&gt;</span>2<span class="nt">&lt;/release&gt;</span>
+                <span class="nt">&lt;mealPlan</span> <span class="na">code=</span><span class="s">"RO"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;occupation</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span> <span class="na">status=</span><span class="s">"Open"</span> <span class="na">amount=</span><span class="s">"150.0"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;occupation</span> <span class="na">adults=</span><span class="s">"2"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span> <span class="na">status=</span><span class="s">"Open"</span> <span class="na">amount=</span><span class="s">"175.0"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;occupation</span> <span class="na">adults=</span><span class="s">"2"</span> <span class="na">children=</span><span class="s">"1"</span> <span class="na">babies=</span><span class="s">"0"</span> <span class="na">status=</span><span class="s">"Open"</span> <span class="na">amount=</span><span class="s">"185.0"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/mealPlan&gt;</span>
+            <span class="nt">&lt;/applicableDates&gt;</span>
+        <span class="nt">&lt;/room&gt;</span>
+    <span class="nt">&lt;/rate&gt;</span>
+<span class="nt">&lt;/PhoenixRoomRateUpdateRequest&gt;</span> 
+
+</code></pre></div><h2 id='phoenixroomrateupdaterequest'>PhoenixRoomRateUpdateRequest</h2>
+<p>Basándonos en la configuración anterior, supongamos que queremos actualizar la tarifa Estandard (código STD) para la habitación Doble (código DBL). 
+La primera semana de Enero, tendrá 10 habitaciones libres, con un release de 2 días. Sin estancia mímina ni máxima, ni restricciones de entrada ni salida. 
+Los precios para la ocupación de 1 Adulto es de 150€, para dos Adultos 175€ y dos adultos + 1 niño 185€ en pensión Solo Alojamiento (código RO) </p>
+<h1 id='faq-39-s'>FAQ&#39;s</h1><h2 id='listado-de-codigos-de-propiedades-de-tarifa'>Listado de códigos de propiedades de tarifa</h2>
+<aside>
+<b>NOTA:</b> NO se realiza ningún tipo de validación para comprobar estas propiedades. Es decir, si se indica que la tarifa es para Desempleados, la plataforma NO realiza ninguna comprobación sobre si los pasajeros están desempleados.
+</aside>
+
+<table><thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>EXC</td>
+<td>País Excluído</td>
+</tr>
+<tr>
+<td>FUN</td>
+<td>Oficial</td>
+</tr>
+<tr>
+<td>HGL</td>
+<td>Tarifa Destacada</td>
+</tr>
+<tr>
+<td>INC</td>
+<td>País Incluido</td>
+</tr>
+<tr>
+<td>MAR</td>
+<td>Mercado</td>
+</tr>
+<tr>
+<td>MED</td>
+<td>Mayores de</td>
+</tr>
+<tr>
+<td>NRE</td>
+<td>Tarifa No Reembolsable</td>
+</tr>
+<tr>
+<td>OFF</td>
+<td>Tarifa Offline</td>
+</tr>
+<tr>
+<td>ON</td>
+<td>Tarifa Online</td>
+</tr>
+<tr>
+<td>OPA</td>
+<td>Tarifa Opaca</td>
+</tr>
+<tr>
+<td>OUT</td>
+<td>Tarifa excluida del calendario de alternativas</td>
+</tr>
+<tr>
+<td>REG</td>
+<td>Tarifa con registro</td>
+</tr>
+<tr>
+<td>RES</td>
+<td>Tarifa para residentes</td>
+</tr>
+<tr>
+<td>UNE</td>
+<td>Tarifa para desempleados</td>
 </tr>
 </tbody></table>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="xml">xml</a>
           </div>
       </div>
     </div>
