@@ -51,7 +51,7 @@
 </PhoenixHotelConfigurationResponse>
 ````
 
-La recuperación de habitaciones y tarifas se realizará mediante el mensaje <b>PhoenixRoomRatesRetrievalRequest</b> que enviará Hotetec al cliente y el cliente deberá responder con un mensaje <b>PhoenixRoomRatesRetrievalResponse</b>. 
+La recuperación de habitaciones y tarifas se realizará mediante el mensaje <b>PhoenixHotelConfigurationRequest</b> que enviará Hotetec al cliente y el cliente deberá responder con un mensaje <b>PhoenixHotelConfigurationResponse</b>.
 
 
 Elemento | Tipo | Obl? |  Descripción
