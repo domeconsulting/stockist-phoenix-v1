@@ -262,7 +262,8 @@ Elemento | Tipo | Obl? |  Descripción
 	<vendorCode>ABC</vendorCode>
 	<hotelCode>30625</hotelCode>
 	<amount>1650.40</amount>
-	<contactPerson name="TEST" surname="TEST" email="test@test.com" telephone="test@test.com"/>
+	<currencyCode>USD</currencyCode>
+	<contactPerson name="TEST" surname="TEST" email="test@test.com" telephone="test@test.com" country="ES"/>
 	<bookingRoom id="1">
 		<status>Confirmed</status>
 		<checkinDate>01/08/2020</checkinDate>
@@ -270,6 +271,7 @@ Elemento | Tipo | Obl? |  Descripción
 		<roomCode>DBL</roomCode>
 		<mealPlan>RO</mealPlan>
 		<amount>1650.40</amount>
+		<currencyCode>USD</currencyCode>
 		<rateDay day="01/08/2020" rateCode="1234" amount="412.60"/>
 		<rateDay day="02/08/2020" rateCode="1234" amount="412.60"/>
 		<rateDay day="03/08/2020" rateCode="1234" amount="412.60"/>
@@ -300,9 +302,10 @@ agencyCode | *String* | Sí | Código de agencia (Proporcionado por Hotetec)
 externAgency | *String* | No | Nombre de agencia final / terceros. Es la agencia final que realiza la reserva, si el cliente tiene agencias que se conecten a él.<br/>Hotetec <-> Cliente <-> Agencia final
 vendorCode | *String* | No | Código de proveedor. Proveedor de Hotetec sobre el cual se realiza la reserva.(Proporcionado por hotetec)
 hotelCode | *String* | Sí | Código de hotel
-
+amount | *Double*                                    | No | Importe de la reserva
+currencyCode | *String*                                    | No | Moneda del importe de la reserva
 ````xml
-	<contactPerson name="TEST" surname="TEST" email="test@test.com" telephone="test@test.com"/> 
+	<contactPerson name="TEST" surname="TEST" email="test@test.com" telephone="test@test.com" country="ES"/> 
 ````
 ## ContactPerson
 Información de la persona de contacto de la reserva. 
@@ -313,6 +316,7 @@ Elemento | Tipo | Obl? |  Descripción
 @surname | *String* | Sí | Apellidos de la persona de contacto
 @email | *String* | No | Email de la persona de contacto
 @telephone | *String* | No | Número de telefono
+@country | *String* | No | País de la persona de contacto
 
 ````xml
 <bookingRoom id="1">
@@ -322,6 +326,7 @@ Elemento | Tipo | Obl? |  Descripción
 	<roomCode>DBL</roomCode>
 	<mealPlan>RO</mealPlan>
 	<amount>1650.40</amount>
+	<currencyCode>USD</currencyCode>
 	<rateDay day="01/08/2020" rateCode="1234" amount="412.60"/>
 	<rateDay day="02/08/2020" rateCode="1234" amount="412.60"/>
 	<rateDay day="03/08/2020" rateCode="1234" amount="412.60"/>
@@ -338,20 +343,21 @@ Elemento | Tipo | Obl? |  Descripción
 Información de una habitación de la reserva. Se permiten habitaciones sin valorar (sin nodo amount) pero aparecerán con amount 0. El nodo rateDay también es opcional si son reservas sin valorar o no se dispone de la información de contrato. 
 <b>NOTA !! Siempre deben indicarse TODOS los bookingRoom de una reserva</b>
 
-Elemento | Tipo | Obl? |  Descripción
---------- | ----------- | ----------- | -----------
-@id | *String* | Sí | Código identificativo de la habitación
-status | *String* | Sí | Estado de la habitación reserva.<br/>Valores Confirmed / Cancelled
-checkinDate | *Date* | Sí | Dia de entrada.<br/>Formato dd/MM/yyyy
-checkoutDate | *Date* | Sí | Dia de salida.<br/>Formato dd/MM/yyyy
-roomCode | *String* | Sí | Código de habitación
-mealPlan | *String* | Sí | Código de régimen alimenticio
-amount | *Double* | No | Importe de la habitación
-rateDay | [**RateDay**](#RateDay) [ 0..N ] | No | Desglose por día de la tarifa
-guest | [**Guest**](#Guest) [ 1..N ] | Sí | Pasajeros de la reserva
+Elemento | Tipo                                        | Obl? |  Descripción
+--------- |---------------------------------------------| ----------- | -----------
+@id | *String*                                    | Sí | Código identificativo de la habitación
+status | *String*                                    | Sí | Estado de la habitación reserva.<br/>Valores Confirmed / Cancelled
+checkinDate | *Date*                                      | Sí | Dia de entrada.<br/>Formato dd/MM/yyyy
+checkoutDate | *Date*                                      | Sí | Dia de salida.<br/>Formato dd/MM/yyyy
+roomCode | *String*                                    | Sí | Código de habitación
+mealPlan | *String*                                    | Sí | Código de régimen alimenticio
+amount | *Double*                                    | No | Importe de la habitación
+currencyCode | *String*                                    | No | Moneda del importe de la habitación
+rateDay | [**RateDay**](#RateDay) [ 0..N ]            | No | Desglose por día de la tarifa
+guest | [**Guest**](#Guest) [ 1..N ]                | Sí | Pasajeros de la reserva
 arrivalFlight | [**FlightInformation**](#FlightInformation) | No | Información del vuelo de llegada
 departureFlight | [**FlightInformation**](#FlightInformation) | No | Información del vuelo de salida
-remark | [**Remark**](#Remark) [ 0 .. N ]| No | Notas para la habitación
+remark | [**Remark**](#Remark) [ 0 .. N ]            | No | Notas para la habitación
 
 ````xml
 	<rateDay day="01/08/2020" rateCode="1234" amount="412.60" /> 
@@ -381,7 +387,7 @@ Elemento | Tipo | Obl? |  Descripción
 @age | *String* | No | Edad del pasajero
 @birthDate | *Date* | Si | Fecha de nacimiento del pasajero.<br/>Formato dd/MM/yyyy
 
-`````xml
+````xml
 	<remark text="nice room please"/> 
 ````
 ## Remark
