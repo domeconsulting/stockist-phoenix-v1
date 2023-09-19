@@ -282,7 +282,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-87e2a712.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-5fdbbad7.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-ab3bc281.js"></script>
 
@@ -491,7 +491,7 @@ Todos los mensajes (excepto la notificación de reservas) siguen este esquema de
 gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento son compatibles, prevaleciendo siempre la última actualización realizada
 </aside>
 <h1 id='control-de-versiones'>Control de versiones</h1>
-<aside class="notice">Versión actual <b>1.0.0</b></aside>
+<aside class="notice">Versión actual <b>1.0.1</b></aside>
 
 <table><thead>
 <tr>
@@ -501,6 +501,12 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <th>Cambios realizados</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>19/09/2023</td>
+<td>Alain Ramirez</td>
+<td>1.0.1</td>
+<td>Campo country en contactPerson, currencyCode dentro de booking y de bookingRoom</td>
+</tr>
 <tr>
 <td>29/03/2023</td>
 <td>Isaac Fullana</td>
@@ -733,7 +739,8 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
         <span class="nt">&lt;vendorCode&gt;</span>ABC<span class="nt">&lt;/vendorCode&gt;</span>
         <span class="nt">&lt;hotelCode&gt;</span>30625<span class="nt">&lt;/hotelCode&gt;</span>
         <span class="nt">&lt;amount&gt;</span>1650.40<span class="nt">&lt;/amount&gt;</span>
-        <span class="nt">&lt;contactPerson</span> <span class="na">name=</span><span class="s">"TEST"</span> <span class="na">surname=</span><span class="s">"TEST"</span> <span class="na">email=</span><span class="s">"test@test.com"</span> <span class="na">telephone=</span><span class="s">"test@test.com"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;currencyCode&gt;</span>USD<span class="nt">&lt;/currencyCode&gt;</span>
+        <span class="nt">&lt;contactPerson</span> <span class="na">name=</span><span class="s">"TEST"</span> <span class="na">surname=</span><span class="s">"TEST"</span> <span class="na">email=</span><span class="s">"test@test.com"</span> <span class="na">telephone=</span><span class="s">"test@test.com"</span> <span class="na">country=</span><span class="s">"ES"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;bookingRoom</span> <span class="na">id=</span><span class="s">"1"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;status&gt;</span>Confirmed<span class="nt">&lt;/status&gt;</span>
             <span class="nt">&lt;checkinDate&gt;</span>01/08/2020<span class="nt">&lt;/checkinDate&gt;</span>
@@ -741,6 +748,7 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
             <span class="nt">&lt;roomCode&gt;</span>DBL<span class="nt">&lt;/roomCode&gt;</span>
             <span class="nt">&lt;mealPlan&gt;</span>RO<span class="nt">&lt;/mealPlan&gt;</span>
             <span class="nt">&lt;amount&gt;</span>1650.40<span class="nt">&lt;/amount&gt;</span>
+            <span class="nt">&lt;currencyCode&gt;</span>USD<span class="nt">&lt;/currencyCode&gt;</span>
             <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"01/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"02/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"03/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
@@ -891,7 +899,7 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
 <td>roomConfig</td>
 <td><a href="#RoomConfig"><strong>RoomConfig</strong></a> [ 1..N ]</td>
 <td>Sí</td>
-<td>Informacion de habitaciones</td>
+<td>Información de habitaciones</td>
 </tr>
 </tbody></table>
 <div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;roomConfig</span> <span class="na">code=</span><span class="s">"2542"</span> <span class="na">name=</span><span class="s">"Doble Vista Mar"</span><span class="nt">&gt;</span>
@@ -1124,7 +1132,7 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
 <td>room</td>
 <td><a href="#Room"><strong>Room</strong></a> [ 1..N ]</td>
 <td>Sí</td>
-<td>Informacion de la habitación</td>
+<td>Información de la habitación</td>
 </tr>
 </tbody></table>
 <div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;room</span> <span class="na">code=</span><span class="s">"1234"</span><span class="nt">&gt;</span>
@@ -1537,13 +1545,13 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
 <td>arrivalFlight</td>
 <td><a href="#FlightInformation"><strong>FlightInformation</strong></a></td>
 <td>No</td>
-<td>Informacion del vuelo de llegada</td>
+<td>Información del vuelo de llegada</td>
 </tr>
 <tr>
 <td>departureFlight</td>
 <td><a href="#FlightInformation"><strong>FlightInformation</strong></a></td>
 <td>No</td>
-<td>Informacion del vuelo de salida</td>
+<td>Información del vuelo de salida</td>
 </tr>
 <tr>
 <td>remark</td>
