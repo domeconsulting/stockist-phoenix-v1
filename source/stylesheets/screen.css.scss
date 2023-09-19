@@ -507,15 +507,17 @@ html, body {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     background: $aside-notice-bg;
+    color: #0c5460;
     line-height: 1.6;
 
     &.warning {
       background-color: $aside-warning-bg;
-      color: #fff;
+      color: #721c24;
     }
 
     &.success {
       background-color: $aside-success-bg;
+      color: #155724
     }
   }
 
