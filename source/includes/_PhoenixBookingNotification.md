@@ -12,7 +12,8 @@
 		<vendorCode>ABC</vendorCode>
 		<hotelCode>30625</hotelCode>
 		<amount>1650.40</amount>
-		<contactPerson name="TEST" surname="TEST" email="test@test.com" telephone="test@test.com"/>
+		<currencyCode>USD</currencyCode>
+		<contactPerson name="TEST" surname="TEST" email="test@test.com" telephone="test@test.com" country="ES"/>
 		<bookingRoom id="1">
 			<status>Confirmed</status>
 			<checkinDate>01/08/2020</checkinDate>
@@ -20,6 +21,7 @@
 			<roomCode>DBL</roomCode>
 			<mealPlan>RO</mealPlan>
 			<amount>1650.40</amount>
+			<currencyCode>USD</currencyCode>
 			<rateDay day="01/08/2020" rateCode="1234" amount="412.60"/>
 			<rateDay day="02/08/2020" rateCode="1234" amount="412.60"/>
 			<rateDay day="03/08/2020" rateCode="1234" amount="412.60"/>

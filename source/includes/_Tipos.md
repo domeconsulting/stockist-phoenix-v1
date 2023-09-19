@@ -42,7 +42,7 @@ Elemento | Tipo | Obl? |  Descripción
 --------- | ----------- | ----------- | -----------
 @code | *String* | Sí | Código del hotel 
 @name | *String* | Sí | Nombre del hotel
-roomConfig | [**RoomConfig**](#RoomConfig) [ 1..N ] | Sí | Informacion de habitaciones
+roomConfig | [**RoomConfig**](#RoomConfig) [ 1..N ] | Sí | Información de habitaciones
 
 ````xml
 <roomConfig code="2542" name="Doble Vista Mar">
@@ -163,7 +163,7 @@ Información de actualización de precio e inventario de una tarifa
 Elemento | Tipo | Obl? |  Descripción
 --------- | ----------- | ----------- | -----------
 @code | *String* | Sí | Código de tarifa
-room | [**Room**](#Room) [ 1..N ] | Sí | Informacion de la habitación
+room | [**Room**](#Room) [ 1..N ] | Sí | Información de la habitación
 
 ````xml
 <room code="1234">
@@ -349,8 +349,8 @@ mealPlan | *String* | Sí | Código de régimen alimenticio
 amount | *Double* | No | Importe de la habitación
 rateDay | [**RateDay**](#RateDay) [ 0..N ] | No | Desglose por día de la tarifa
 guest | [**Guest**](#Guest) [ 1..N ] | Sí | Pasajeros de la reserva
-arrivalFlight | [**FlightInformation**](#FlightInformation) | No | Informacion del vuelo de llegada
-departureFlight | [**FlightInformation**](#FlightInformation) | No | Informacion del vuelo de salida
+arrivalFlight | [**FlightInformation**](#FlightInformation) | No | Información del vuelo de llegada
+departureFlight | [**FlightInformation**](#FlightInformation) | No | Información del vuelo de salida
 remark | [**Remark**](#Remark) [ 0 .. N ]| No | Notas para la habitación
 
 ````xml
