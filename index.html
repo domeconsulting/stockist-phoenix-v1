@@ -427,6 +427,18 @@
                     <a href="#guest" class="toc-h2 toc-link" data-title="Guest">
 					Guest</a>
                   </li>
+                  <li>
+                    <a href="#remark" class="toc-h2 toc-link" data-title="Remark">
+					Remark</a>
+                  </li>
+                  <li>
+                    <a href="#paymentcarddetail" class="toc-h2 toc-link" data-title="PaymentCardDetail">
+					PaymentCardDetail</a>
+                  </li>
+                  <li>
+                    <a href="#flightinformation" class="toc-h2 toc-link" data-title="FlightInformation">
+					FlightInformation</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1331,7 +1343,8 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
     <span class="nt">&lt;vendorCode&gt;</span>ABC<span class="nt">&lt;/vendorCode&gt;</span>
     <span class="nt">&lt;hotelCode&gt;</span>30625<span class="nt">&lt;/hotelCode&gt;</span>
     <span class="nt">&lt;amount&gt;</span>1650.40<span class="nt">&lt;/amount&gt;</span>
-    <span class="nt">&lt;contactPerson</span> <span class="na">name=</span><span class="s">"TEST"</span> <span class="na">surname=</span><span class="s">"TEST"</span> <span class="na">email=</span><span class="s">"test@test.com"</span> <span class="na">telephone=</span><span class="s">"test@test.com"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;currencyCode&gt;</span>USD<span class="nt">&lt;/currencyCode&gt;</span>
+    <span class="nt">&lt;contactPerson</span> <span class="na">name=</span><span class="s">"TEST"</span> <span class="na">surname=</span><span class="s">"TEST"</span> <span class="na">email=</span><span class="s">"test@test.com"</span> <span class="na">telephone=</span><span class="s">"test@test.com"</span> <span class="na">country=</span><span class="s">"ES"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;bookingRoom</span> <span class="na">id=</span><span class="s">"1"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;status&gt;</span>Confirmed<span class="nt">&lt;/status&gt;</span>
         <span class="nt">&lt;checkinDate&gt;</span>01/08/2020<span class="nt">&lt;/checkinDate&gt;</span>
@@ -1339,6 +1352,7 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
         <span class="nt">&lt;roomCode&gt;</span>DBL<span class="nt">&lt;/roomCode&gt;</span>
         <span class="nt">&lt;mealPlan&gt;</span>RO<span class="nt">&lt;/mealPlan&gt;</span>
         <span class="nt">&lt;amount&gt;</span>1650.40<span class="nt">&lt;/amount&gt;</span>
+        <span class="nt">&lt;currencyCode&gt;</span>USD<span class="nt">&lt;/currencyCode&gt;</span>
         <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"01/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"02/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"03/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
@@ -1419,8 +1433,20 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
 <td>Sí</td>
 <td>Código de hotel</td>
 </tr>
+<tr>
+<td>amount</td>
+<td><em>Double</em></td>
+<td>No</td>
+<td>Importe de la reserva</td>
+</tr>
+<tr>
+<td>currencyCode</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Moneda del importe de la reserva</td>
+</tr>
 </tbody></table>
-<div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;contactPerson</span> <span class="na">name=</span><span class="s">"TEST"</span> <span class="na">surname=</span><span class="s">"TEST"</span> <span class="na">email=</span><span class="s">"test@test.com"</span> <span class="na">telephone=</span><span class="s">"test@test.com"</span><span class="nt">/&gt;</span> 
+<div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;contactPerson</span> <span class="na">name=</span><span class="s">"TEST"</span> <span class="na">surname=</span><span class="s">"TEST"</span> <span class="na">email=</span><span class="s">"test@test.com"</span> <span class="na">telephone=</span><span class="s">"test@test.com"</span> <span class="na">country=</span><span class="s">"ES"</span><span class="nt">/&gt;</span> 
 </code></pre></div><h2 id='contactperson'>ContactPerson</h2>
 <p>Información de la persona de contacto de la reserva. </p>
 
@@ -1456,6 +1482,12 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
 <td>No</td>
 <td>Número de telefono</td>
 </tr>
+<tr>
+<td>@country</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>País de la persona de contacto</td>
+</tr>
 </tbody></table>
 <div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;bookingRoom</span> <span class="na">id=</span><span class="s">"1"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;status&gt;</span>Confirmed<span class="nt">&lt;/status&gt;</span>
@@ -1464,6 +1496,7 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
     <span class="nt">&lt;roomCode&gt;</span>DBL<span class="nt">&lt;/roomCode&gt;</span>
     <span class="nt">&lt;mealPlan&gt;</span>RO<span class="nt">&lt;/mealPlan&gt;</span>
     <span class="nt">&lt;amount&gt;</span>1650.40<span class="nt">&lt;/amount&gt;</span>
+    <span class="nt">&lt;currencyCode&gt;</span>USD<span class="nt">&lt;/currencyCode&gt;</span>
     <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"01/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"02/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;rateDay</span> <span class="na">day=</span><span class="s">"03/08/2020"</span> <span class="na">rateCode=</span><span class="s">"1234"</span> <span class="na">amount=</span><span class="s">"412.60"</span><span class="nt">/&gt;</span>
@@ -1528,6 +1561,12 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
 <td><em>Double</em></td>
 <td>No</td>
 <td>Importe de la habitación</td>
+</tr>
+<tr>
+<td>currencyCode</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Moneda del importe de la habitación</td>
 </tr>
 <tr>
 <td>rateDay</td>
@@ -1635,43 +1674,87 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
 </tr>
 </tbody></table>
 <div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;remark</span> <span class="na">text=</span><span class="s">"nice room please"</span><span class="nt">/&gt;</span> 
-````
-## Remark
+</code></pre></div><h2 id='remark'>Remark</h2>
+<p>Información de las notas de una reserva </p>
 
-Información de las notas de una reserva 
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@text</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Texto del nota</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;paymentCardDetail</span> <span class="na">holder=</span><span class="s">"Guest name"</span> <span class="na">number=</span><span class="s">"4111111111111111"</span> <span class="na">expiryDate=</span><span class="s">"01/04/2025"</span> <span class="na">securityCode=</span><span class="s">"123"</span><span class="nt">/&gt;</span> 
+</code></pre></div><h2 id='paymentcarddetail'>PaymentCardDetail</h2>
+<p>Información de pago por tarjeta de una reserva </p>
 
-Elemento | Tipo | Obl? |  Descripción
---------- | ----------- | ----------- | -----------
-@text | *String* | Sí | Texto del nota
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@holder</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Nombre del titular de la tarjeta</td>
+</tr>
+<tr>
+<td>@number</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Número de la tarjeta</td>
+</tr>
+<tr>
+<td>@expiryDate</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Fecha de caducidad de la tarjeta.<br/>Formato dd/MM/yyyy</td>
+</tr>
+<tr>
+<td>@securityCode</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>CVC código de seguridad</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight xml tab-xml"><code>    <span class="nt">&lt;arrivalFlight</span> <span class="na">dateTime=</span><span class="s">"01/01/2021 00:00:00"</span> <span class="na">flightNumber=</span><span class="s">"abc1234"</span> <span class="nt">/&gt;</span>
+</code></pre></div><h2 id='flightinformation'>FlightInformation</h2>
+<p>Información de un vuelo de la reserva </p>
 
-````xml
-<span class="nt">&lt;paymentCardDetail</span> <span class="na">holder=</span><span class="s">"Guest name"</span> <span class="na">number=</span><span class="s">"4111111111111111"</span> <span class="na">expiryDate=</span><span class="s">"01/04/2025"</span> <span class="na">securityCode=</span><span class="s">"123"</span><span class="nt">/&gt;</span> 
-````
-
-## PaymentCardDetail
-
-Información de pago por tarjeta de una reserva 
-
-
-Elemento | Tipo | Obl? |  Descripción
---------- | ----------- | ----------- | -----------
-@holder | *String* | Sí | Nombre del titular de la tarjeta
-@number | *String* | Sí | Número de la tarjeta
-@expiryDate | *Date* | Sí | Fecha de caducidad de la tarjeta.<span class="nt">&lt;br/&gt;</span>Formato dd/MM/yyyy
-@securityCode | *String* | Sí | CVC código de seguridad
-
-````xml
-    <span class="nt">&lt;arrivalFlight</span> <span class="na">dateTime=</span><span class="s">"01/01/2021 00:00:00"</span> <span class="na">flightNumber=</span><span class="s">"abc1234"</span> <span class="nt">/&gt;</span>
-````
-## FlightInformation
-
-Información de un vuelo de la reserva 
-
-Elemento | Tipo | Obl? |  Descripción
---------- | ----------- | ----------- | -----------
-@dateTime | *Date* | Sí | Información del día y hora del vuelo.<span class="nt">&lt;br/&gt;</span>Formato dd/MM/yyyy HH:mm:ss
-@flightNumber | *String* | Sí | Número de vuelo
-</code></pre></div><h1 id='ejemplos'>Ejemplos</h1><div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;PhoenixHotelConfigurationResponse&gt;</span>
+<table><thead>
+<tr>
+<th>Elemento</th>
+<th>Tipo</th>
+<th>Obl?</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>@dateTime</td>
+<td><em>Date</em></td>
+<td>Sí</td>
+<td>Información del día y hora del vuelo.<br/>Formato dd/MM/yyyy HH:mm:ss</td>
+</tr>
+<tr>
+<td>@flightNumber</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Número de vuelo</td>
+</tr>
+</tbody></table>
+<h1 id='ejemplos'>Ejemplos</h1><div class="highlight"><pre class="highlight xml tab-xml"><code><span class="nt">&lt;PhoenixHotelConfigurationResponse&gt;</span>
     <span class="nt">&lt;hotelConfig</span> <span class="na">code=</span><span class="s">"555"</span> <span class="na">name=</span><span class="s">"Playa del Mar"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;roomConfig</span> <span class="na">code=</span><span class="s">"INV"</span> <span class="na">name=</span><span class="s">"Individual"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;occupationConfig</span> <span class="na">adults=</span><span class="s">"1"</span> <span class="na">children=</span><span class="s">"0"</span> <span class="na">babies=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
