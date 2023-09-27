@@ -217,8 +217,8 @@ availableQuota | *Integer* | Sí | Habitaciones disponibles (cupo disponible)
 release | *Integer* | No | Días de release
 minimumStay | *Integer* | No | Días de estancia mínima
 maximumStay | *Integer* | No | Días de estancia máxima
-checkinRestriction | *String* | No | Indica si el dia de checkin tiene restringida la entrada<br/>Valores Open, Closed
-checkoutRestriction | *String* | No | Indica si el dia de checkout tiene restringida la salida<br/>Valores Open, Closed
+checkinRestriction | *String* | No | Indica si el día de checkin tiene restringida la entrada<br/>Valores Open, Closed
+checkoutRestriction | *String* | No | Indica si el día de checkout tiene restringida la salida<br/>Valores Open, Closed
 mealPlan | [**MealPlan**](#MealPlan) [ 1..N ] | Sí | Información de actualización de régimen.
 
 ````xml
@@ -295,9 +295,9 @@ Elemento | Tipo | Obl? |  Descripción
 --------- | ----------- | ----------- | -----------
 reference | *String* | Sí | Localizador de la reserva
 externReference | *String* | No | Localizador de la agencia / terceros
-createDateTime | *Date* | Sí | dia y hora de la creacion de la reserva.<br/>Formato dd/MM/yyyy HH:mm:ss
-checkinDate | *Date* | Sí | Dia de entrada (más reciente de las habitaciones).<br/>Formato dd/MM/yyyy
-checkoutDate | *Date* | Sí | Dia de salida (más tarde de las habitaciones).<br/>Formato dd/MM/yyyy
+createDateTime | *Date* | Sí | Día y hora de la creación de la reserva.<br/>Formato dd/MM/yyyy HH:mm:ss
+checkinDate | *Date* | Sí | Día de entrada (más reciente de las habitaciones).<br/>Formato dd/MM/yyyy
+checkoutDate | *Date* | Sí | Día de salida (más tarde de las habitaciones).<br/>Formato dd/MM/yyyy
 agencyCode | *String* | Sí | Código de agencia (Proporcionado por Hotetec)
 externAgency | *String* | No | Nombre de agencia final / terceros. Es la agencia final que realiza la reserva, si el cliente tiene agencias que se conecten a él.<br/>Hotetec <-> Cliente <-> Agencia final
 vendorCode | *String* | No | Código de proveedor. Proveedor de Hotetec sobre el cual se realiza la reserva.(Proporcionado por hotetec)
@@ -311,12 +311,12 @@ currencyCode | *String*                                    | No | Moneda del imp
 Información de la persona de contacto de la reserva. 
 
 Elemento | Tipo | Obl? |  Descripción
---------- | ----------- | ----------- | -----------
-@name | *String* | Sí | Nombre de la persona de contacto
-@surname | *String* | Sí | Apellidos de la persona de contacto
-@email | *String* | No | Email de la persona de contacto
-@telephone | *String* | No | Número de telefono
-@country | *String* | No | País de la persona de contacto
+--------- | ----------- |------| -----------
+@name | *String* | Sí   | Nombre de la persona de contacto
+@surname | *String* | No    | Apellidos de la persona de contacto
+@email | *String* | No   | Email de la persona de contacto
+@telephone | *String* | No   | Número de telefono
+@country | *String* | No   | País de la persona de contacto
 
 ````xml
 <bookingRoom id="1">
@@ -347,8 +347,8 @@ Elemento | Tipo                                        | Obl? |  Descripción
 --------- |---------------------------------------------| ----------- | -----------
 @id | *String*                                    | Sí | Código identificativo de la habitación
 status | *String*                                    | Sí | Estado de la habitación reserva.<br/>Valores Confirmed / Cancelled
-checkinDate | *Date*                                      | Sí | Dia de entrada.<br/>Formato dd/MM/yyyy
-checkoutDate | *Date*                                      | Sí | Dia de salida.<br/>Formato dd/MM/yyyy
+checkinDate | *Date*                                      | Sí | Día de entrada.<br/>Formato dd/MM/yyyy
+checkoutDate | *Date*                                      | Sí | Día de salida.<br/>Formato dd/MM/yyyy
 roomCode | *String*                                    | Sí | Código de habitación
 mealPlan | *String*                                    | Sí | Código de régimen alimenticio
 amount | *Double*                                    | No | Importe de la habitación
@@ -368,7 +368,7 @@ Desglose de tarifas por día
 
 Elemento | Tipo | Obl? |  Descripción
 --------- | ----------- | ----------- | -----------
-@day | *Date* | Sí | Dia de aplicacion del elemento.<br/>Formato dd/MM/yyyy
+@day | *Date* | Sí | Día de aplicación del elemento.<br/>Formato dd/MM/yyyy
 @rateCode | *String* | Sí | Código de tarifa
 @amount | *Double* | Sí | Importe del día
 
@@ -419,9 +419,9 @@ Elemento | Tipo | Obl? |  Descripción
 ````
 ## FlightInformation
 
-Información de un vuelo de la reserva 
+Información de vuelo de la reserva 
 
 Elemento | Tipo | Obl? |  Descripción
---------- | ----------- | ----------- | -----------
-@dateTime | *Date* | Sí | Información del día y hora del vuelo.<br/>Formato dd/MM/yyyy HH:mm:ss
-@flightNumber | *String* | Sí | Número de vuelo
+--------- | ----------- |------| -----------
+@dateTime | *Date* | Sí   | Información del día y hora del vuelo.<br/>Formato dd/MM/yyyy HH:mm:ss
+@flightNumber | *String* | No   | Número de vuelo
