@@ -300,6 +300,11 @@ checkinDate | *Date* | Sí | Día de entrada (más reciente de las habitaciones)
 checkoutDate | *Date* | Sí | Día de salida (más tarde de las habitaciones).<br/>Formato dd/MM/yyyy
 agencyCode | *String* | Sí | Código de agencia (Proporcionado por Hotetec)
 externAgency | *String* | No | Nombre de agencia final / terceros. Es la agencia final que realiza la reserva, si el cliente tiene agencias que se conecten a él.<br/>Hotetec <-> Cliente <-> Agencia final
+externAgencyCode | *String* | No | Código de agencia externa
+externAgencyCountry | *String* | No | País de agencia externa
+externAgencyAddres | *String* | No | Dirección de agencia externa
+externAgencyEmail | *String* | No | Correo Electrónico de agencia externa
+externAgencyPhone | *String* | No | Teléfono de agencia externa
 vendorCode | *String* | No | Código de proveedor. Proveedor de Hotetec sobre el cual se realiza la reserva.(Proporcionado por hotetec)
 hotelCode | *String* | Sí | Código de hotel
 amount | *Double*                                    | No | Importe de la reserva
