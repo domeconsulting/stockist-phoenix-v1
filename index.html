@@ -531,6 +531,12 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>1.0.2</td>
 <td>Campo <strong>surname</strong> en ContactPerson y <strong>flightNumber</strong> en FlightInformation ahora opcionales</td>
 </tr>
+<tr>
+<td>07/10/2023</td>
+<td>Alain Ramirez</td>
+<td>1.0.3</td>
+<td>Nuevos campos de agencia externa para la reserva (<b>booking</b>): <b>externAgencyCode</b>, <b>externAgencyCountry</b>, <b>externAgencyAddres</b>, <b>externAgencyEmail</b> y <b>externAgencyPhone</b></td>
+</tr>
 </tbody></table>
 <h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
 <ul>
@@ -1426,6 +1432,36 @@ Mensaje dedicado a la recuperación de reservas. Aqui el cliente envía la Reque
 <td><em>String</em></td>
 <td>No</td>
 <td>Nombre de agencia final / terceros. Es la agencia final que realiza la reserva, si el cliente tiene agencias que se conecten a él.<br/>Hotetec &lt;-&gt; Cliente &lt;-&gt; Agencia final</td>
+</tr>
+<tr>
+<td>externAgencyCode</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Código de agencia externa</td>
+</tr>
+<tr>
+<td>externAgencyCountry</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>País de agencia externa</td>
+</tr>
+<tr>
+<td>externAgencyAddres</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Dirección de agencia externa</td>
+</tr>
+<tr>
+<td>externAgencyEmail</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Correo Electrónico de agencia externa</td>
+</tr>
+<tr>
+<td>externAgencyPhone</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Teléfono de agencia externa</td>
 </tr>
 <tr>
 <td>vendorCode</td>
